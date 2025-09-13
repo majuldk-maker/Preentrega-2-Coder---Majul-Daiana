@@ -11,6 +11,15 @@
   --shadow: 0 6px 18px rgba(41, 56, 56, 0.06);
 }
 
+footer .footerRedes a i {
+  text-decoration: none;
+}
+footer .footerRedes a i:hover {
+  background: #6dd3d3;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 4px 10px rgba(55, 182, 182, 0.3);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,12 +41,16 @@ body {
 
 nav {
   background: transparent;
-  padding: 18px 0;
+}
+nav .logo img {
+  max-height: 60px;
+  width: auto;
+  display: block;
+  margin-left: 20px;
 }
 
 header .menu {
-  list-style: none;
-  margin: 0;
+  margin-left: 10px;
   padding: 0;
   display: flex;
   gap: 20px;
@@ -68,8 +81,7 @@ header .menu li a.active {
 }
 
 footer {
-  margin-top: 36px;
-  padding: 26px 0;
+  margin: 10px;
 }
 footer .footer {
   list-style: none;
@@ -80,15 +92,16 @@ footer .footer {
   color: #6b7b7b;
   font-size: 14px;
   flex-wrap: wrap;
+  padding: 0;
 }
-
-.footerRedes {
+footer .footerRedes {
   display: flex;
   justify-content: center;
   gap: 16px;
   margin: 20px;
+  list-style: none;
 }
-.footerRedes a {
+footer .footerRedes a {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -99,13 +112,14 @@ footer .footer {
   justify-content: center;
   font-size: 18px;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
-.footerRedes a:hover {
+footer .footerRedes a:hover {
   background: #6dd3d3;
   transform: scale(1.1) rotate(5deg);
   box-shadow: 0 4px 10px rgba(55, 182, 182, 0.3);
 }
-.footerRedes a i {
+footer .footerRedes a i {
   line-height: 1;
 }
 
@@ -115,6 +129,7 @@ footer .footer {
 #titular h1 {
   text-align: center;
   color: rgb(93, 180, 206);
+  letter-spacing: 5px;
 }
 #titular h2 {
   text-align: center;
@@ -139,6 +154,12 @@ footer .footer {
   font-size: 18px;
   color: #2b3a3a;
   animation: destellos 1.5s infinite;
+}
+#contenido h4 {
+  margin: 15px 0 0;
+  font-weight: 700;
+  color: #2b3a3a;
+  text-align: center;
 }
 #contenido p {
   color: #6b7b7b;

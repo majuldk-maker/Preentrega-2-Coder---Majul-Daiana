@@ -42,6 +42,16 @@ $shadow: 0 6px 18px rgba(41, 56, 56, 0.06);
   transition: all 0.3s ease;
 }
 
+%icono-red {
+  text-decoration: none;
+
+  &:hover {
+    background: $accent-2;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 10px rgba($accent, 0.3);
+  }
+}
+
 
 * {
   margin: 0;
@@ -64,13 +74,18 @@ body {
 
 nav {
   background: transparent;
-  padding: 18px 0;
+
+  .logo img {
+    max-height: 60px;
+    width: auto;
+    display: block;
+    margin-left: 20px;
+  }
 }
 
 header {
   .menu {
-    list-style: none;
-    margin: 0;
+    margin-left: 10px;
     padding: 0;
     display: flex;
     gap: 20px;
@@ -99,9 +114,7 @@ header {
 }
 
 footer {
-  margin-top: 36px;
-  padding: 26px 0;
-
+  margin: 10px;
   .footer {
     list-style: none;
     display: flex;
@@ -111,36 +124,40 @@ footer {
     color: $muted;
     font-size: 14px;
     flex-wrap: wrap;
+    padding: 0;
   }
-}
 
-.footerRedes {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin: 20px;
-
-
-  a {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: $accent;
-    color: #fff;
+  .footerRedes {
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 18px;
-    transition: all 0.3s ease;
+    gap: 16px;
+    margin: 20px;
+    list-style: none;
 
-    &:hover {
-      background: $accent-2;
-      transform: scale(1.1) rotate(5deg);
-      box-shadow: 0 4px 10px rgba($accent, 0.3);
-    }
 
-    i {
-      line-height: 1;
+    a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: $accent;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+
+      &:hover {
+        background: $accent-2;
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 4px 10px rgba($accent, 0.3);
+      }
+
+      i {
+        line-height: 1;
+        @extend %icono-red
+      }
     }
   }
 }
@@ -151,6 +168,7 @@ footer {
   h1 {
     text-align: center;
     color: rgb(93, 180, 206);
+    letter-spacing: 5px;
   }
 
   h2 {
@@ -177,11 +195,19 @@ footer {
     animation: destellos 1.5s infinite;
   }
 
+  h4 {
+    margin: 15px 0 0;
+    font-weight: 700;
+    color: $text;
+    text-align: center;
+  }
+
   p {
     color: $muted;
     line-height: 1.6;
   }
 }
+
 #contenido video {
   object-fit: cover;
 }
@@ -242,10 +268,13 @@ footer {
 }
 
 @keyframes destellos {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
-  50%{
+
+  50% {
     opacity: 0.5;
   }
 }
