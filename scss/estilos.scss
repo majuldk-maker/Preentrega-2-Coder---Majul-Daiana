@@ -115,6 +115,7 @@ header {
 
 footer {
   margin: 10px;
+
   .footer {
     list-style: none;
     display: flex;
@@ -169,11 +170,15 @@ footer {
     text-align: center;
     color: rgb(93, 180, 206);
     letter-spacing: 5px;
+    font-size: 30px;
+    font-weight: 600;
   }
 
   h2 {
     text-align: center;
     color: rgb(200, 210, 122);
+    font-size: 25px;
+    font-weight: 500;
   }
 }
 
@@ -181,7 +186,7 @@ footer {
   @include card-style(28px, $radius);
 
   img {
-    max-width: 100%;
+    max-width: 35%;
     height: auto;
     border-radius: 12px;
     display: block;
@@ -189,16 +194,24 @@ footer {
   }
 
   h3 {
+    text-align: center;
     margin: 0 0 10px;
-    font-size: 18px;
-    color: $text;
-    animation: destellos 1.5s infinite;
+    font-size: 20px;
+    color: $accent;
+    animation: destellos 2s infinite;
+    font-weight: 700;
   }
 
   h4 {
     margin: 15px 0 0;
+    font-weight: 600;
+    color: $muted;
+  }
+
+  h5 {
+    margin: 15px 0 0;
     font-weight: 700;
-    color: $text;
+    color: $muted;
     text-align: center;
   }
 
@@ -208,93 +221,94 @@ footer {
   }
 }
 
-#contenido video {
-  object-fit: cover;
-}
-
-.grid-3 {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(1, 1fr);
-  align-items: start;
-}
-
-.grid-card {
-  @include card-style();
-  min-height: 160px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-
-  h4 {
-    margin: 10px 0 0;
-    font-weight: 700;
-    color: $text;
+  #contenido video {
+    object-fit: cover;
   }
-}
 
-.form-card {
-  @include card-style(18px);
+  .grid-3 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: start;
+  }
 
-  label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
+  .grid-card {
+    @include card-style();
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    h4 {
+      margin: 10px 0 0;
+      font-weight: 700;
+      color: $text;
+    }
+
+  }
+
+  .form-card {
+    @include card-style(18px);
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: $muted;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #e6eef0;
+      margin-bottom: 14px;
+      font-size: 14px;
+      resize: vertical;
+    }
+  }
+
+  .map {
+    background: linear-gradient(135deg, #eef7f7, #f8fbfb);
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: $muted;
+    border: 1px dashed #e2eded;
   }
 
-  input,
-  textarea {
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 8px;
-    border: 1px solid #e6eef0;
-    margin-bottom: 14px;
-    font-size: 14px;
-    resize: vertical;
-  }
-}
+  @keyframes destellos {
 
-.map {
-  background: linear-gradient(135deg, #eef7f7, #f8fbfb);
-  height: 200px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: $muted;
-  border: 1px dashed #e2eded;
-}
+    0%,
+    100% {
+      opacity: 1;
+    }
 
-@keyframes destellos {
-
-  0%,
-  100% {
-    opacity: 1;
+    40% {
+      opacity: 0.5;
+    }
   }
 
-  50% {
-    opacity: 0.5;
-  }
-}
+  @media (min-width: 36rem) {
+    .grid-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-@media (min-width: 36rem) {
-  .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
+    .gallery {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .contact-wrap {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
-  .gallery {
-    grid-template-columns: repeat(4, 1fr);
+  @media (min-width: 62rem) {
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
-
-  .contact-wrap {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 62rem) {
-  .grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}

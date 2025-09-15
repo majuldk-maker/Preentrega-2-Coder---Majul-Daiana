@@ -130,10 +130,14 @@ footer .footerRedes a i {
   text-align: center;
   color: rgb(93, 180, 206);
   letter-spacing: 5px;
+  font-size: 30px;
+  font-weight: 600;
 }
 #titular h2 {
   text-align: center;
   color: rgb(200, 210, 122);
+  font-size: 25px;
+  font-weight: 500;
 }
 
 #contenido {
@@ -143,22 +147,29 @@ footer .footerRedes a i {
   box-shadow: 0 6px 18px rgba(41, 56, 56, 0.06);
 }
 #contenido img {
-  max-width: 100%;
+  max-width: 35%;
   height: auto;
   border-radius: 12px;
   display: block;
   margin: 0 auto 18px;
 }
 #contenido h3 {
+  text-align: center;
   margin: 0 0 10px;
-  font-size: 18px;
-  color: #2b3a3a;
-  animation: destellos 1.5s infinite;
+  font-size: 20px;
+  color: #37b6b6;
+  animation: destellos 2s infinite;
+  font-weight: 700;
 }
 #contenido h4 {
   margin: 15px 0 0;
+  font-weight: 600;
+  color: #6b7b7b;
+}
+#contenido h5 {
+  margin: 15px 0 0;
   font-weight: 700;
-  color: #2b3a3a;
+  color: #6b7b7b;
   text-align: center;
 }
 #contenido p {
@@ -232,7 +243,7 @@ footer .footerRedes a i {
   0%, 100% {
     opacity: 1;
   }
-  50% {
+  40% {
     opacity: 0.5;
   }
 }
