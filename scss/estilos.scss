@@ -23,7 +23,7 @@ $shadow: 0 6px 18px rgba(41, 56, 56, 0.06);
   --shadow: 0 6px 18px rgba(41, 56, 56, 0.06);
 }
 
-@mixin card-style($padding: 20px, $radius: 12px) {
+@mixin card-style($padding: 25px, $radius: 12px) {
   background: $card;
   padding: $padding;
   border-radius: $radius;
@@ -51,7 +51,6 @@ $shadow: 0 6px 18px rgba(41, 56, 56, 0.06);
     box-shadow: 0 4px 10px rgba($accent, 0.3);
   }
 }
-
 
 * {
   margin: 0;
@@ -183,10 +182,10 @@ footer {
 }
 
 #contenido {
-  @include card-style(28px, $radius);
+  @include card-style(20px, $radius);
 
   img {
-    max-width: 35%;
+    max-width: 40%;
     height: auto;
     border-radius: 12px;
     display: block;
@@ -219,33 +218,10 @@ footer {
     color: $muted;
     line-height: 1.6;
   }
-}
 
-  #contenido video {
-    object-fit: cover;
-  }
 
-  .grid-3 {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(1, 1fr);
-    align-items: start;
-  }
-
-  .grid-card {
-    @include card-style();
-    min-height: 160px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-
-    h4 {
-      margin: 10px 0 0;
-      font-weight: 700;
-      color: $text;
-    }
-
+  video {
+    object-fit:contain;
   }
 
   .form-card {
@@ -279,36 +255,100 @@ footer {
     justify-content: center;
     color: $muted;
     border: 1px dashed #e2eded;
-  }
 
-  @keyframes destellos {
-
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    40% {
-      opacity: 0.5;
+    iframe {
+      width: 100%;
+      height: 100%;
     }
   }
 
-  @media (min-width: 36rem) {
-    .grid-3 {
-      grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: start;
+
+  .grid-card {
+    @include card-style();
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    h5 {
+      margin: 10px 0 0;
+      font-weight: 700;
+      color: $text;
     }
 
-    .gallery {
-      grid-template-columns: repeat(4, 1fr);
-    }
+  }
+}
+.nosotros-flex{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
-    .contact-wrap {
-      grid-template-columns: 1fr 1fr;
-    }
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+}
+
+@keyframes destellos {
+
+  0%,
+  100% {
+    opacity: 1;
   }
 
-  @media (min-width: 62rem) {
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
+  40% {
+    opacity: 0.5;
+  }
+}
+
+@media (min-width:576px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .contact-wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    img{
+      max-width: 100%;
+      margin: 0 auto;
     }
   }
+  .video{
+    max-height: 50%;
+  }
+
+  .nosotros-flex{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 40px;
+      margin: 0;
+    }
+    .texto-nosotros{
+      padding-left: 20px;
+      align-items: center;
+    }
+  }
+}
